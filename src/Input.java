@@ -4,7 +4,8 @@ import lexAnalyzer.LexAnalyzer;
 import java.io.*;
 
 /**
- * Created by yyy on 2016/11/9.
+ * Created by StreakyPork
+ * on 2018/11/13.
  * 用来将token序列转换为符合语法分析程序要求输入字符串，为简化id类型均用i来代替，操作符使用原先的符号
  */
 public class Input {
@@ -14,17 +15,20 @@ public class Input {
         analyzer.lexicalAnalyze(outFileName);
         helper.closeFile();
 
-        BufferedReader br = null;
-        String result="";
+        BufferedReader br;
+        String result = "";
         try {
-            br = new BufferedReader(new InputStreamReader(new FileInputStream(new File(outFileName))));
-            String line ="";
+            br = new BufferedReader(new FileReader(outFileName));
+            String line;
             while((line=br.readLine())!=null){
                 line = line.substring(1,line.length()-1);
                 String[] token = line.split(",");
+                //ID简化为i
                 if(token[0].equals("ID")){
                     result+="i";
-                }else{
+                }
+                //其余形式不变
+                else{
                     result+=token[1];
                 }
             }
@@ -32,10 +36,12 @@ public class Input {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        //输入末尾加入终结符
         result+="$";
         return result;
     }
+    /*
     private void getTokenSequence(String inputFileName,String outFileName){
-
     }
+    */
 }

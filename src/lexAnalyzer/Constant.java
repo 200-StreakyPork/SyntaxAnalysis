@@ -3,7 +3,7 @@ package lexAnalyzer;
 import java.util.Arrays;
 
 /**
- * @author cuihao
+ * @author StreakyPork
  */
 public class Constant {
     private static final String[] KEYWORDS={"abstract","assert","boolean","break","byte","case","catch","char","class",

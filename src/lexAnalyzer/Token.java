@@ -2,7 +2,7 @@ package lexAnalyzer;
 
 /**
  * Token class
- * @author cuihao
+ * @author StreakyPork
  */
 public class Token {
     /**

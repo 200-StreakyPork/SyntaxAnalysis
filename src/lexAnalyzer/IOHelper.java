@@ -7,10 +7,10 @@ import java.io.IOException;
 
 
 /**
- * @author cuihao
+ * @author StreakyPork
  */
 public class IOHelper {
-    BufferedReader reader;
+    private BufferedReader reader;
 
     public IOHelper(String path) {
         try {
@@ -21,14 +21,18 @@ public class IOHelper {
     }
 
     public String nextLine() {
-        assert reader!=null;
-        String next = null;
-        try {
-            next = reader.readLine();
-        } catch (IOException e) {
-            e.printStackTrace();
+        if(reader!=null) {
+            String next = null;
+            try {
+                next = reader.readLine();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return next;
         }
-        return next;
+        else{
+            return null;
+        }
     }
 
     public void closeFile() {
@@ -42,7 +46,7 @@ public class IOHelper {
 
     public static void main(String[] args) {
         IOHelper helper = new IOHelper("testFile/testProgram.txt");
-        String temp = "";
+        String temp;
         while ((temp = helper.nextLine()) != null) {
             System.out.println(temp);
         }

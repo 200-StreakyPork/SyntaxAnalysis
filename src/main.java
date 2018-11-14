@@ -1,10 +1,6 @@
-import lexAnalyzer.IOHelper;
-import lexAnalyzer.LexAnalyzer;
-
-import java.io.*;
-
 /**
- * Created by yyy on 2016/11/8.
+ * Created by StreakyPork
+ * on 2018/11/13.
  */
 public class main {
     public static void main(String[] args){

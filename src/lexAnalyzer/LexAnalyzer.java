@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  * logic of lexical analyzer
- * @author cuihao
+ * @author StreakyPork
  */
 public class LexAnalyzer {
     private IOHelper ioHelper;
@@ -21,7 +21,7 @@ public class LexAnalyzer {
     }
 
     public void lexicalAnalyze(String outFileName) {
-        String line = "";
+        String line;
         while ((line = ioHelper.nextLine()) != null) {
             int index = 0;
             String tempWord = "";
@@ -136,10 +136,8 @@ public class LexAnalyzer {
             }
         }
         output(outFileName);
-//        for(Token token:tokens){
-//            System.out.println(token);
-//        }
     }
+
     private void output(String fileName){
         File outputFile = new File(fileName);
 

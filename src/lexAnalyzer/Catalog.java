@@ -2,7 +2,7 @@ package lexAnalyzer;
 
 /**
  * catalog of lexical units
- * @author cuihao
+ * @author StreakyPork
  */
 public enum Catalog {
     KEYWORD,ID,INT,DOUBLE,OPERATOR,SEPARATOR
